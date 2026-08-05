@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>구글시트 ➔ 카카오톡 자동 알림 세팅 가이드</title>
+  <title>구글시트 ➔ 카카오톡 자동 알림 초간단 세팅 가이드</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-kakao-brown text-kakao-yellow">
-        <i data-lucide="clock" class="w-3.5 h-3.5 mr-1"></i> 소요시간 약 10분
+        <i data-lucide="clock" class="w-3.5 h-3.5 mr-1"></i> 소요시간 약 5분
       </span>
     </div>
   </header>
@@ -65,11 +65,11 @@
     <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="space-y-2">
         <div class="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-2.5 py-1 rounded-md mb-1">
-          💡 코드를 몰라도 OK / 클릭만 하면 완성!
+          💡 코드를 몰라도 100% OK / 클릭만 하면 완성!
         </div>
         <h2 class="text-lg sm:text-xl font-bold text-gray-900">컴퓨터를 꺼두어도 매일 아침 알림이 쏙!</h2>
         <p class="text-sm text-gray-600 leading-relaxed">
-          어려운 코드는 안 보셔도 됩니다! 아래 입력창에 **내 카카오 키**와 **시트 주소**만 복사해 넣으면, <b>나에게 맞는 코드가 자동으로 완성</b>됩니다.
+          어려운 코드를 수정하실 필요가 전혀 없습니다! 아래 **입력창 3개**만 채운 뒤 <b>[나만의 맞춤 코드 만들기]</b> 버튼을 누르면 완성된 코드가 짠 하고 나타납니다.
         </p>
       </div>
     </div>
@@ -102,13 +102,13 @@
             <p class="text-xs text-gray-500 mt-1 pl-4">• 앱 이름: <code class="bg-gray-100 px-1.5 py-0.5 rounded text-gray-800">도서관알림</code> / 사업자명: <code class="bg-gray-100 px-1.5 py-0.5 rounded text-gray-800">본인이름</code> 입력 후 저장</p>
           </li>
           <li class="pl-2">
-            생성된 앱을 클릭하고 들어간 화면에 보이는 <b class="text-amber-600">REST API 키</b>를 복사해 둡니다.
+            생성된 앱을 클릭하고 들어간 화면에 보이는 <b class="text-amber-600">REST API 키</b>를 복사합니다.
           </li>
           <li class="pl-2">
             왼쪽 메뉴 <b>[카카오 로그인]</b> ➔ 활성화 상태를 <b>`ON`</b>으로 변경합니다.
           </li>
           <li class="pl-2">
-            같은 화면 아래쪽 <b>[Redirect URI 등록]</b> 버튼을 누르고 아래 주소를 복사해 붙여넣고 저장합니다.
+            같은 화면 아래쪽 <b>[Redirect URI 등록]</b> 버튼을 누르고 아래 주소를 입력 후 저장합니다.
             <div class="mt-2 flex items-center space-x-2">
               <input type="text" readonly value="https://google.com" id="redirect-uri" class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-xs sm:text-sm font-mono text-gray-800 w-64 focus:outline-none">
               <button onclick="copyToClipboard('https://google.com')" class="px-3 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg text-xs font-semibold flex items-center transition">
@@ -124,44 +124,63 @@
     </section>
 
 
-    <!-- STEP 2 (코드 자동 생성기) -->
+    <!-- STEP 2 (완전 자동화 코드 생성기) -->
     <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
       <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-5 text-white flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <span class="w-8 h-8 rounded-full bg-kakao-yellow text-kakao-brown font-extrabold flex items-center justify-center text-base shadow">2</span>
-          <h3 class="font-bold text-lg sm:text-xl">내 정보 입력하고 맞춤 코드 만들기</h3>
+          <h3 class="font-bold text-lg sm:text-xl">정보 입력하고 맞춤 코드 1초 만에 만들기</h3>
         </div>
       </div>
 
       <div class="p-6 space-y-6">
         
         <!-- Input Form -->
-        <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 space-y-4">
+        <div class="bg-amber-50/80 border border-amber-200 rounded-2xl p-5 space-y-4">
           <h4 class="font-bold text-gray-900 text-base flex items-center">
-            <i data-lucide="sliders" class="w-5 h-5 mr-2 text-amber-600"></i> 정보 입력창 (여기에 입력하면 코드가 자동으로 작성됩니다)
+            <i data-lucide="edit-3" class="w-5 h-5 mr-2 text-amber-600"></i> 아래 3개 항목만 입력해 주세요
           </h4>
           
-          <div class="space-y-3">
+          <div class="space-y-4">
+            <!-- 1. API KEY -->
             <div>
-              <label class="block text-xs font-bold text-gray-700 mb-1">1. 카카오 REST API 키</label>
-              <input type="text" id="user-api-key" placeholder="1단계에서 복사한 REST API 키를 붙여넣으세요" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none">
+              <label class="block text-xs font-bold text-gray-700 mb-1">1단계: 카카오 REST API 키</label>
+              <input type="text" id="user-api-key" oninput="onKeyChange()" placeholder="1단계에서 복사한 REST API 키를 붙여넣으세요" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none">
             </div>
 
+            <!-- 2. SHEET URL -->
             <div>
-              <label class="block text-xs font-bold text-gray-700 mb-1">2. 공유받은 구글 스프레드시트 주소 (URL)</label>
+              <label class="block text-xs font-bold text-gray-700 mb-1">2단계: 공유받은 구글 스프레드시트 전체 주소 (URL)</label>
               <input type="text" id="user-sheet-url" placeholder="https://docs.google.com/spreadsheets/d/... (주소창 전체 복사)" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            </div>
+
+            <!-- 3. AUTH CODE WITH DIRECT LINK -->
+            <div class="bg-white p-3.5 rounded-xl border border-amber-200 space-y-2">
+              <label class="block text-xs font-bold text-gray-800">3단계: 카카오 로그인 암호 (code)</label>
+              
+              <div class="flex flex-col sm:flex-row gap-2">
+                <button onclick="openKakaoLoginUrl()" class="bg-kakao-yellow hover:bg-kakao-hover text-kakao-brown font-bold px-4 py-2 rounded-lg text-xs flex items-center justify-center whitespace-nowrap shadow-sm transition">
+                  <i data-lucide="key" class="w-3.5 h-3.5 mr-1.5"></i> 👉 [클릭] 카카오 로그인하고 암호(code) 받기
+                </button>
+              </div>
+
+              <input type="text" id="user-auth-code" placeholder="로그인 후 주소창의 code= 뒷부분 전체를 여기에 붙여넣으세요" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none mt-1">
+              
+              <p class="text-[11px] text-gray-500 leading-tight">
+                💡 [클릭] 버튼을 누르면 로그인 창이 엽니다. 동의 후 구글 페이지로 넘어갔을 때 <b>맨 위 주소창</b>의 <code class="text-red-600 font-bold">https://www.google.com/?code=여기암호문자열</code> 에서 <code class="text-red-600 font-bold">code=</code> 뒷부분만 복사해 오시면 됩니다.
+              </p>
             </div>
           </div>
 
-          <button onclick="generateCustomCode()" class="w-full bg-kakao-brown hover:bg-black text-kakao-yellow font-bold py-3 px-4 rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow">
-            <i data-lucide="wand2" class="w-4 h-4"></i>
-            <span>나만의 맞춤 코드 생성하기</span>
+          <button onclick="generateCustomCode()" class="w-full bg-kakao-brown hover:bg-black text-kakao-yellow font-bold py-3 px-4 rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow-lg">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>✨ 나만의 맞춤 코드 만들기</span>
           </button>
         </div>
 
-        <div class="space-y-3">
-          <p class="text-sm text-gray-700">
-            위에서 [코드 생성하기]를 누른 뒤, 아래 **[코드 전체 복사하기]** 버튼을 클릭하여 구글 Apps Script 화면에 그대로 붙여넣으세요!
+        <div class="space-y-2">
+          <p class="text-xs sm:text-sm text-gray-700 font-semibold">
+            👇 생성이 완료되면 [코드 전체 복사하기] 버튼을 누른 뒤, 구글 Apps Script 화면에 그대로 붙여넣으세요!
           </p>
         </div>
 
@@ -187,39 +206,40 @@
       <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 sm:p-5 text-white flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <span class="w-8 h-8 rounded-full bg-white text-blue-600 font-extrabold flex items-center justify-center text-base shadow">3</span>
-          <h3 class="font-bold text-lg sm:text-xl">내 카카오톡 계정 최종 연결하기</h3>
+          <h3 class="font-bold text-lg sm:text-xl">구글 Apps Script에 붙여넣고 클릭 2번하기</h3>
         </div>
-        <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">최초 1회 인증</span>
+        <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">코드 수정 0개!</span>
       </div>
 
       <div class="p-6 space-y-6 text-sm sm:text-base text-gray-700">
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mt-0.5">3-1</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-lg mt-0.5">1</span>
             <div>
-              <p class="font-semibold text-gray-900">로그인 주소 생성</p>
+              <p class="font-semibold text-gray-900">구글 Apps Script 접속 및 코드 붙여넣기</p>
               <p class="text-xs sm:text-sm text-gray-600">
-                Apps Script 상단 메뉴에서 <code class="bg-gray-100 px-1 py-0.5 rounded font-bold">step1_printLoginUrl</code> 선택 후 <b>[실행]</b> 클릭 ➔ 하단 로그에 나오는 <code class="text-blue-600">https://kauth.kakao.com...</code> 긴 주소를 복사합니다.
+                구글 시트 상단 메뉴 <b>[확장 프로그램] ➔ [Apps Script]</b> 접속 ➔ 기존 코드 다 지우고 방금 복사한 코드를 그대로 붙여넣은 뒤 <b>`Cmd + S` (윈도우 `Ctrl + S`)를 눌러 저장</b>합니다.
               </p>
             </div>
           </div>
 
           <div class="flex items-start space-x-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mt-0.5">3-2</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-lg mt-0.5">2</span>
             <div>
-              <p class="font-semibold text-gray-900">카카오 동의 및 일회용 코드 획득</p>
+              <p class="font-semibold text-gray-900">클릭 1: 카카오톡 최초 연결</p>
               <p class="text-xs sm:text-sm text-gray-600">
-                인터넷 새 탭을 열고 복사한 주소로 접속 후 카카오 동의 진행 ➔ 화면이 구글로 이동하면 <b>인터넷 창 맨 위 주소창</b>에서 <code class="bg-gray-100 px-1 py-0.5 rounded text-red-600 font-bold">code=</code> 뒤의 알파벳/숫자 조합만 복사합니다.
+                상단 메뉴 드롭다운에서 <code class="bg-gray-100 px-1.5 py-0.5 rounded font-bold text-blue-700">step1_카톡연결하기</code> 선택 후 <b>[실행]</b> 버튼 클릭!
+                <br><span class="text-[11px] text-gray-500">(권한 허용 창이 뜨면: 고급 ➔ 안전하지 않은 페이지로 이동 ➔ 허용 클릭)</span>
               </p>
             </div>
           </div>
 
           <div class="flex items-start space-x-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mt-0.5">3-3</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-lg mt-0.5">3</span>
             <div>
-              <p class="font-semibold text-gray-900">코드 입력 및 토큰 저장</p>
+              <p class="font-semibold text-gray-900">클릭 2: 발송 테스트하기</p>
               <p class="text-xs sm:text-sm text-gray-600">
-                Apps Script 코드 <b>18번째 줄</b> <code class="bg-gray-100 px-1 py-0.5 rounded text-gray-800">AUTH_CODE = "복사한코드";</code>에 붙여넣고 <b>`Cmd + S` 저장</b> ➔ 메뉴에서 <code class="bg-gray-100 px-1 py-0.5 rounded font-bold">step2_getInitialToken</code> 선택 후 <b>[실행]</b>!
+                상단 메뉴 드롭다운에서 <code class="bg-gray-100 px-1.5 py-0.5 rounded font-bold text-blue-700">step2_카톡발송하기</code> 선택 후 <b>[실행]</b> 버튼 클릭! 내 카카오톡으로 도서관 알림 메시지가 오면 연결 완성입니다! 🎉
               </p>
             </div>
           </div>
@@ -229,7 +249,7 @@
           <div class="flex items-center space-x-3">
             <i data-lucide="check-circle-2" class="w-6 h-6 text-green-600 flex-shrink-0"></i>
             <span class="text-xs sm:text-sm text-green-900 font-semibold">
-              <code class="font-bold">step3_sendKakaoMessage</code>를 실행했을 때 내 카카오톡으로 메시지가 들어오면 연결 성공!
+              카카오톡으로 알림 메시지가 무사히 수신되었다면 이제 4단계 타이머만 맞추시면 됩니다.
             </span>
           </div>
         </div>
@@ -252,13 +272,13 @@
           <li class="pl-2">우측 하단 파란색 <b>[+ 트리거 추가]</b> 버튼 클릭</li>
           <li class="pl-2">설정 옵션 지정:
             <ul class="pl-6 mt-1 space-y-1 text-xs sm:text-sm text-gray-600 list-disc">
-              <li>실행할 함수 선택: <b class="text-gray-900">step3_sendKakaoMessage</b></li>
+              <li>실행할 함수 선택: <b class="text-gray-900">step2_카톡발송하기</b></li>
               <li>이벤트 소스 선택: <b class="text-gray-900">시간 기반</b></li>
               <li>트리거 기반 시간 유형: <b class="text-gray-900">일일 타이머</b></li>
-              <li>시간대 선택: <b class="text-gray-900">오전 9시~10시 (원하는 발송 시간)</b></li>
+              <li>시간대 선택: <b class="text-gray-900">오전 9시~10시 (원하는 발송 시간대)</b></li>
             </ul>
           </li>
-          <li class="pl-2"><b>[저장]</b>을 누르면 모든 세팅 완료! 🎉</li>
+          <li class="pl-2"><b>[저장]</b>을 누르면 모든 세팅 완벽 완료! 🎉</li>
         </ol>
       </div>
     </section>
@@ -270,32 +290,43 @@
     <p>도서관 봉사자용 구글시트-카카오톡 자동 연동 가이드 시스템</p>
   </footer>
 
-  <!-- Code Generator Script -->
+  <!-- Code Generator Logic Script -->
   <script>
-    function getTemplate(apiKey, sheetUrl) {
+    function openKakaoLoginUrl() {
+      const apiKey = document.getElementById('user-api-key').value.trim();
+      if (!apiKey) {
+        alert("⚠️ 1단계: '카카오 REST API 키'를 먼저 입력해주세요!");
+        document.getElementById('user-api-key').focus();
+        return;
+      }
+      const url = `https://kauth.kakao.com/oauth/authorize?client_id=${apiKey}&redirect_uri=https://google.com&response_type=code`;
+      window.open(url, '_blank');
+    }
+
+    function getTemplate(apiKey, sheetUrl, authCode) {
       const keyVal = apiKey.trim() ? apiKey.trim() : "여기에_카카오_REST_API_키_입력";
       const urlVal = sheetUrl.trim() ? sheetUrl.trim() : "";
+      const codeVal = authCode.trim() ? authCode.trim() : "";
 
       const sheetAccessLogic = urlVal 
         ? `var sheet = SpreadsheetApp.openByUrl("${urlVal}").getSheets()[0];`
         : `var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];`;
 
       return `// ==========================================
-// 1. 정보 입력 칸
+// 1. 자동 입력된 설정 정보 (수정할 필요 없음!)
 // ==========================================
 var REST_API_KEY = "${keyVal}"; 
+var AUTH_CODE = "${codeVal}";
 var REDIRECT_URI = "https://google.com";
 
 // ==========================================
-// 2. 초기 1회 인증용 함수
+// 2. 최초 1회 실행: 카카오톡 계정 연결하기
 // ==========================================
-function step1_printLoginUrl() {
-  var url = "https://kauth.kakao.com/oauth/authorize?client_id=" + REST_API_KEY + "&redirect_uri=" + REDIRECT_URI + "&response_type=code";
-  Logger.log("\\n\\n👇 아래 주소를 복사해서 인터넷 창에 붙여넣고 엔터를 치세요 👇\\n\\n" + url + "\\n");
-}
-
-function step2_getInitialToken() {
-  var AUTH_CODE = "여기에_인터넷창_주소에서_복사한_code값_입력"; 
+function step1_카톡연결하기() {
+  if (!AUTH_CODE || AUTH_CODE.indexOf("여기에_") === 0) {
+    Logger.log("❌ 오류: 가이드 웹페이지에서 '카카오 로그인 암호(code)'까지 입력한 뒤 코드를 생성해서 붙여넣어 주세요!");
+    return;
+  }
   
   var url = "https://kauth.kakao.com/oauth/token";
   var payload = {
@@ -309,15 +340,19 @@ function step2_getInitialToken() {
   var response = UrlFetchApp.fetch(url, options);
   var json = JSON.parse(response.getContentText());
   
-  PropertiesService.getScriptProperties().setProperty("KAKAO_ACCESS_TOKEN", json.access_token);
-  PropertiesService.getScriptProperties().setProperty("KAKAO_REFRESH_TOKEN", json.refresh_token);
-  Logger.log("🎉 토큰 발급 및 저장 성공! 이제 step3 함수를 실행해보세요.");
+  if (json.access_token) {
+    PropertiesService.getScriptProperties().setProperty("KAKAO_ACCESS_TOKEN", json.access_token);
+    PropertiesService.getScriptProperties().setProperty("KAKAO_REFRESH_TOKEN", json.refresh_token);
+    Logger.log("🎉 카카오톡 계정 연결 성공! 이제 상단에서 [step2_카톡발송하기]를 눌러 테스트 해보세요.");
+  } else {
+    Logger.log("❌ 연결 실패: " + response.getContentText());
+  }
 }
 
 // ==========================================
-// 3. 매일 실행될 실제 카카오톡 전송 함수
+// 3. 매일 실행될 실제 카카오톡 알림 발송 함수
 // ==========================================
-function step3_sendKakaoMessage() {
+function step2_카톡발송하기() {
   var msg = generateTodayMessage();
   
   if (!msg) {
@@ -353,7 +388,7 @@ function step3_sendKakaoMessage() {
   if (result.code == -401) { 
     Logger.log("토큰 만료됨. 자동 갱신 후 재전송...");
     refreshKakaoToken();
-    step3_sendKakaoMessage(); 
+    step2_카톡발송하기(); 
   } else if (result.result_code == 0) {
     Logger.log("🚀 카카오톡 나에게 보내기 성공!\\n\\n[발송된 메시지]\\n" + msg);
   } else {
@@ -365,7 +400,6 @@ function step3_sendKakaoMessage() {
 // 4. 오늘 일자를 자동 판별하는 스마트 로직
 // ==========================================
 function generateTodayMessage() {
-  // 시트 주소 직접 읽기 처리
   ${sheetAccessLogic}
   
   var displayValues = sheet.getDataRange().getDisplayValues();
@@ -454,17 +488,23 @@ function refreshKakaoToken() {
     let generatedCodeCache = "";
 
     function renderInitialCode() {
-      generatedCodeCache = getTemplate("", "");
+      generatedCodeCache = getTemplate("", "", "");
       document.getElementById('code-display').textContent = generatedCodeCache;
     }
 
     function generateCustomCode() {
       const apiKey = document.getElementById('user-api-key').value;
       const sheetUrl = document.getElementById('user-sheet-url').value;
+      const authCode = document.getElementById('user-auth-code').value;
 
-      generatedCodeCache = getTemplate(apiKey, sheetUrl);
+      if (!apiKey.trim()) {
+        alert("1단계: 카카오 REST API 키를 입력해 주세요!");
+        return;
+      }
+
+      generatedCodeCache = getTemplate(apiKey, sheetUrl, authCode);
       document.getElementById('code-display').textContent = generatedCodeCache;
-      showToast("나만의 맞춤 코드가 완성되었습니다!");
+      showToast("✨ 나만의 맞춤 코드가 생성되었습니다!");
     }
 
     function copyGeneratedCode() {
@@ -473,7 +513,7 @@ function refreshKakaoToken() {
 
     function copyToClipboard(text) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => showToast("클립보드에 복사되었습니다!"));
+        navigator.clipboard.writeText(text).then(() => showToast("클립보드에 코드가 복사되었습니다!"));
       } else {
         const textarea = document.createElement('textarea');
         textarea.value = text;
@@ -481,7 +521,7 @@ function refreshKakaoToken() {
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        showToast("클립보드에 복사되었습니다!");
+        showToast("클립보드에 코드가 복사되었습니다!");
       }
     }
 
